@@ -4,3 +4,4 @@ resources:
   - namespace.yaml
   - helmrelease.yaml
   - clusterrolebinding.yaml
+  - ingress.yaml
