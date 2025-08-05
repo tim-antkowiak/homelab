@@ -25,3 +25,7 @@ spec:
     timeout: 10m
     recreate: true
     cleanupOnFail: true
+  values:
+    service:
+      annotations:
+        traefik.ingress.kubernetes.io/service.serverstransport: insecure-skip-transport@kubernetescrd
