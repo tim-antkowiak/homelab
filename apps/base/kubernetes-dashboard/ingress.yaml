@@ -10,7 +10,7 @@ spec:
     - match: 'Host(`k3s-dashboard.local.t-a.dev`)'
       kind: Rule
       services:
-        - name: kubernetes-dashboard
+        - name: kubernetes-dashboard-kong-proxy
           port: 443
           serversTransport: kubernetes-dashboard-transport
   tls:
