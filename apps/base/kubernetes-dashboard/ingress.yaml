@@ -9,6 +9,7 @@ metadata:
     traefik.ingress.kubernetes.io/service.scheme: https
     cert-manager.io/cluster-issuer: letsencrypt-production
     traefik.ingress.kubernetes.io/service.serverstransport: insecure-skip-transport@kubernetescrd
+    traefik.ingress.kubernetes.io/service.server: kubernetes-dashboard-kong-proxy.kubernetes-dashboard
 spec:
   rules:
     - host: k3s-dashboard.local.t-a.dev
