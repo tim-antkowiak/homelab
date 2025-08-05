@@ -5,22 +5,22 @@ metadata:
   namespace: kubernetes-dashboard
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.tls: 'true'
     traefik.ingress.kubernetes.io/service.scheme: http
     cert-manager.io/cluster-issuer: letsencrypt-production
 spec:
   rules:
-  - host: k3s-dashboard.local.t-a.dev
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: kubernetes-dashboard
-            port:
-              number: 80
+    - host: k3s-dashboard.local.t-a.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kubernetes-dashboard-kong-proxy
+                port:
+                  number: 443
   tls:
-  - hosts:
-    - k3s-dashboard.local.t-a.dev
-    secretName: k3s-dashboard-tls # cert-manager will create this secret
+    - hosts:
+        - k3s-dashboard.local.t-a.dev
+      secretName: k3s-dashboard-tls
