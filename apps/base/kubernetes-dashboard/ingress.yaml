@@ -20,4 +20,6 @@ spec:
                 port:
                   number: 443
   tls:
-    secretName: k3s-dashboard-tls
+    - hosts:
+        - k3s-dashboard.local.t-a.dev
+      secretName: k3s-dashboard-tls
