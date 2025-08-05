@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: cert-manager
-      version: "v1.15.1"
+      version: 'v1.15.1'
       sourceRef:
         kind: HelmRepository
         name: jetstack
@@ -29,3 +29,5 @@ spec:
     cleanupOnFail: true
   values:
     installCRDs: true
+    dns01RecursiveNameservers: 8.8.8.8:53,1.1.1.1:53
+    dns01RecursiveNameserversOnly: true
