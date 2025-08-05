@@ -1,7 +1,8 @@
 apiVersion: traefik.io/v1alpha1
 kind: ServersTransport
 metadata:
-  name: insecure-skip-transport
+  name: kubernetes-dashboard-transport
   namespace: kubernetes-dashboard
 spec:
+  serverName: 'k3s-dashboard.local.t-a.dev'
   insecureSkipVerify: true
