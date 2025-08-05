@@ -4,11 +4,8 @@ metadata:
   name: kubernetes-dashboard
   namespace: kubernetes-dashboard
   annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
     traefik.ingress.kubernetes.io/router.tls: 'true'
-    traefik.ingress.kubernetes.io/service.scheme: https
-    traefik.ingress.kubernetes.io/router.tls.insecure: 'true'
-    cert-manager.io/cluster-issuer: letsencrypt-production
+    traefik.ingress.kubernetes.io/service.serverstransport: insecure-skip-transport@kubernetescrd
 spec:
   rules:
     - host: k3s-dashboard.local.t-a.dev
