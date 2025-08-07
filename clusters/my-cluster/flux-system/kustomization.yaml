@@ -3,9 +3,3 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
-
-secretGenerator:
-- name: sops-gpg
-  namespace: flux-system
-  files:
-  - sops.asc=./sops.asc
