@@ -1,0 +1,37 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: renovate
+  namespace: renovate
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: renovate
+      version: '6.0.0'
+      sourceRef:
+        kind: HelmRepository
+        name: renovate
+        namespace: flux-system
+  values:
+    renovate:
+      configFrom:
+        - secretKeyRef:
+            name: renovate-config
+            key: config.js
+      secretsFrom:
+        - secretKeyRef:
+            name: renovate-secrets
+            key: RENOVATE_TOKEN
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+      remediateLastFailure: true
+    cleanupOnFail: true
+  rollback:
+    timeout: 10m
+    recreate: true
+    cleanupOnFail: true
