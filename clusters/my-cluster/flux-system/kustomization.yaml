@@ -9,3 +9,25 @@ secretGenerator:
   namespace: flux-system
   files:
   - sops.asc=./sops.asc
+
+patches:
+- patch: |
+    - op: add
+      path: /spec/template/spec/volumes/-
+      value:
+        name: sops-gpg
+        secret:
+          secretName: sops-gpg
+    - op: add
+      path: /spec/template/spec/containers/0/volumeMounts/-
+      value:
+        name: sops-gpg
+        mountPath: /home/flux/.sops
+        readOnly: true
+    - op: add
+      path: /spec/template/spec/containers/0/args/-
+      value: --sops-gpg-key-id=D4B6234746B97244
+  target:
+    kind: Deployment
+    name: kustomize-controller
+    namespace: flux-system
