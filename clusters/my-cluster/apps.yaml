@@ -11,3 +11,7 @@ spec:
     name: flux-system
   path: ./apps/my-cluster
   prune: true
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
