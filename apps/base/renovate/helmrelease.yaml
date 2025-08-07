@@ -21,7 +21,7 @@ spec:
             key: config.js
       secretsFrom:
         - secretKeyRef:
-            name: renovate-secrets
+            name: renovate-pat
             key: RENOVATE_TOKEN
   install:
     remediation:
