@@ -15,6 +15,7 @@ spec:
         namespace: flux-system
   values:
     renovate:
+      existingConfigFile: "/etc/renovate/config.json"
       secretsFrom:
         - secretKeyRef:
             name: renovate-pat
