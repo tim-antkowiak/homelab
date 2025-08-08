@@ -7,7 +7,7 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: renovate
+      chart: mend-renovate-ce
       version: '6.0.0'
       sourceRef:
         kind: HelmRepository
