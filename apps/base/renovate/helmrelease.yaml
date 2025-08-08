@@ -15,10 +15,6 @@ spec:
         namespace: flux-system
   values:
     renovate:
-      configFrom:
-        - secretKeyRef:
-            name: renovate-config
-            key: config.js
       secretsFrom:
         - secretKeyRef:
             name: renovate-pat

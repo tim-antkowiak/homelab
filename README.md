@@ -5,7 +5,7 @@
 ```
 kubectl create secret generic cloudflare-api-token-secret --from-literal=api-token=YOUR_CLOUDFLARE_API_TOKEN -n cert-manager
 
-kubectl create secret generic renovate-pat --namespace=renovate --from-literal=RENOVATE_TOKEN=<YOUR-GITHUB-TOKEN>
+kubectl create secret generic renovate-pat --from-literal=RENOVATE_TOKEN=<your-github-token> -n flux-system
 ```
 
 ## Usefull commands
