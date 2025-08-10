@@ -15,20 +15,10 @@ spec:
         namespace: flux-system
   values:
     renovate:
-      existingConfigFile: "/etc/renovate/config.json"
+      envFrom:
+        - configMapRef:
+            name: renovate-configmap
       secretsFrom:
         - secretKeyRef:
             name: renovate-pat
             key: RENOVATE_TOKEN
-  install:
-    remediation:
-      retries: 3
-  upgrade:
-    remediation:
-      retries: 3
-      remediateLastFailure: true
-    cleanupOnFail: true
-  rollback:
-    timeout: 10m
-    recreate: true
-    cleanupOnFail: true
