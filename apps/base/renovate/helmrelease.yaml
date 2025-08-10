@@ -17,10 +17,8 @@ spec:
     renovate:
       config: |
         {}
-    envFrom:
+    extraEnvFrom:
       - configMapRef:
           name: renovate-configmap
-    secretsFrom:
-      - secretKeyRef:
+      - secretRef:
           name: renovate-pat
-          key: RENOVATE_TOKEN
