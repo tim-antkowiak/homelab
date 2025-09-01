@@ -12,3 +12,5 @@ spec:
       services:
         - name: argo-test-helm-guestbook
           port: 80
+  tls:
+    secretName: argo-test-tls
