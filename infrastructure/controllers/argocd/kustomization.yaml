@@ -5,11 +5,7 @@ resources:
   - argocd.yaml
   - ingress.yaml
 patches:
-  - patch: |-
-      - op: add
-        path: /data
-        value:
-          server.insecure: "true"
+  - path: argocd-server-patch.yaml
     target:
-      kind: ConfigMap
-      name: argocd-cmd-params-cm
+      kind: Deployment
+      name: argocd-server
