@@ -4,3 +4,4 @@ resources:
   - kubernetes-dashboard.yaml
   - jetstack.yaml
   - renovate.yaml
+  - flamingo.yaml
