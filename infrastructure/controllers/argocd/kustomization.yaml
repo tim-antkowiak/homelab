@@ -5,3 +5,4 @@ resources:
   - argocd.yaml
   - ingress.yaml
   - serverstransport.yaml
+  - certificate.yaml
