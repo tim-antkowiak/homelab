@@ -4,3 +4,11 @@ resources:
   - namespace.yaml
   - argocd.yaml
   - ingress.yaml
+patches:
+  - target:
+      kind: ConfigMap
+      name: argocd-cmd-params-cm
+    patch: |-
+      - op: add
+        path: /data/server.insecure
+        value: "true"
