@@ -4,8 +4,3 @@ resources:
   - namespace.yaml
   - argocd.yaml
   - ingress.yaml
-patches:
-  - path: argocd-server-patch.yaml
-    target:
-      kind: Deployment
-      name: argocd-server

@@ -11,4 +11,7 @@ spec:
       kind: Rule
       services:
         - name: argocd-server
-          port: 80
+          port: 443
+          serversTransport: argocd-server-transport
+  tls:
+    secretName: argocd-server-tls
