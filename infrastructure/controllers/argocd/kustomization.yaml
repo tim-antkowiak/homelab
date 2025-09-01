@@ -4,3 +4,4 @@ resources:
   - namespace.yaml
   - argocd.yaml
   - ingress.yaml
+  - serverstransport.yaml
