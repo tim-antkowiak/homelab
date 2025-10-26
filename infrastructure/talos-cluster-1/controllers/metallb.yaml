@@ -49,23 +49,3 @@ spec:
           memory: "256Mi"
       frr:
         enabled: false
----
-# MetalLB IP Address Pool
-apiVersion: metallb.io/v1beta1
-kind: IPAddressPool
-metadata:
-  name: default-pool
-  namespace: metallb-system
-spec:
-  addresses:
-    - 192.168.178.15-192.168.178.19
----
-# L2 Advertisement (Layer 2 mode)
-apiVersion: metallb.io/v1beta1
-kind: L2Advertisement
-metadata:
-  name: default
-  namespace: metallb-system
-spec:
-  ipAddressPools:
-    - default-pool
