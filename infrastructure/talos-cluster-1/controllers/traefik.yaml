@@ -106,18 +106,3 @@ spec:
       limits:
         cpu: "1000m"
         memory: "512Mi"
-
-    # Health checks
-    livenessProbe:
-      httpGet:
-        path: /ping
-        port: 9000
-      initialDelaySeconds: 10
-      periodSeconds: 10
-
-    readinessProbe:
-      httpGet:
-        path: /ping
-        port: 9000
-      initialDelaySeconds: 10
-      periodSeconds: 10
