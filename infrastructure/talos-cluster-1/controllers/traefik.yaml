@@ -91,12 +91,10 @@ spec:
                       - traefik
               topologyKey: kubernetes.io/hostname
 
-    # Persistence for SSL certificates (ReadWriteMany for HA)
+    # Persistence disabled - no storage provisioner on Talos by default
+    # If you need persistence for ACME certificates, install a storage provisioner
     persistence:
-      enabled: true
-      accessMode: ReadWriteOnce
-      size: 128Mi
-      path: /data
+      enabled: false
 
     # Resource limits
     resources:
