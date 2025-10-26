@@ -13,9 +13,7 @@ spec:
   path: ./infrastructure/talos-cluster-1/metallb-config
   prune: true
   wait: true
-  # Wait for MetalLB HelmRelease to install CRDs
-  dependsOn:
-    - name: infrastructure-controllers
+  # Wait for MetalLB HelmRelease to install CRDs (no dependsOn to avoid circular dependency)
   healthChecks:
     - apiVersion: helm.toolkit.fluxcd.io/v2
       kind: HelmRelease
